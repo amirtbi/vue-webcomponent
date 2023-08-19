@@ -42,7 +42,7 @@ watch(() => props.coin.money, (newValue, oldValue) => {
 
 <template>
     <transition mode="out-in">
-        <article :key="coin.money">
+        <article class="article-wrapper" :key="coin.money">
             <div class="coin-tracker bg-color">
                 <h2 class="title">{{ coin.name }}
 
@@ -63,8 +63,37 @@ watch(() => props.coin.money, (newValue, oldValue) => {
     </transition>
 </template>
 
-<style scoped>
-artilce {
+
+<style>
+@import url(../../node_modules//vuetify/dist/vuetify.min.css);
+
+.coin-tracker__container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 600px;
+    height: auto;
+    padding: 2rem;
+}
+
+.coin-tracker__main--title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0.75rem;
+}
+
+.article-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+artilce.article-wrapper {
     margin: 2rem;
 }
 
@@ -99,5 +128,19 @@ artilce {
 
 .bg-color {
     background: v-bind(background)
+}
+
+
+#arrow-up {
+    color: green;
+    font-size: 12px;
+    margin: 0 0.25rem;
+
+}
+
+#arrow-down {
+    color: red;
+    margin: 0 0.25rem;
+    font-size: 12px;
 }
 </style>
